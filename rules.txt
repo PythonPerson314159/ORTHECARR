@@ -1,0 +1,22 @@
+RULES
+  
+  The objective of this game is to fill the grid of numbers as well as you can so that they form a chain going around the grid. You get some pre-filled in numbers and gain more points for every one you contain in your chain (that's right, there's no obligation to include all of them)
+  
+  The rule on which numbers are valid to place next are simple. For values a and b, you can only place (all of the mod 10 btw):
+  
+  a+b
+  a/2+b (if a is even)
+  a+b/2 (if b is even)
+  (a+b)/2 (if result is even)
+  a*b
+  a*b/2 (if result is even)
+  
+  You also get exactly one wildcard per game, where you can put it in place for any number (it doesn't have to be valid), but it automatically deducts 1000 points from your score so you must be careful with it.
+  
+  For example, if the chain is currently 2 3 6, you could add the wildcard - 2 3 6 ? - and place anything next, say throw a 7 in - 2 3 6 ? 7 - and even use the wildcard as another number to claim a prefilled - 2 3 6 ? (acting as 3) 7 1 (prefilled)
+  
+  You gain 100 points for every number you include in your loop, 500 if you add a prefilled to your chain, and gain points at the end based on this formula - max((3.5-dfsstycs')*400,0) so in a PERFECT GAME you'd get (given 5x5 grid and 7 prefilleds) 7400 POINTS
+  
+  There's nothing else to add
+  
+  ' = distance from starting square to your current square

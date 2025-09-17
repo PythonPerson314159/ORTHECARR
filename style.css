@@ -1,0 +1,22 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+div{
+  text-align:center;
+}
+canvas {
+  display: block;
+}
+@font-face {
+    font-family: 'eee'; /*a name to be used later*/
+    src: 'CONSOLA.TTF' /*URL to font*/
+}
+div{
+  text-align:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+}
