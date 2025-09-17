@@ -17,9 +17,13 @@ function hex1t(t){
 
 bnm=0
 function setup() {
-  if (localStorage.getItem("quota0").slice(1)!=floor(new Date()/86400000)){
+ if (localStorage.getItem("quota0")==null){
     localStorage.setItem("quota0","0"+floor(new Date()/86400000))
   }
+  else if (localStorage.getItem("quota0").slice(1)!=floor(new Date()/86400000)){
+    localStorage.setItem("quota0","0"+floor(new Date()/86400000))
+  }
+	
   
   esd=undefined
 bm=0
