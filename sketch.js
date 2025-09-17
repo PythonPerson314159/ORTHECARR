@@ -246,7 +246,7 @@ function draw(){
     text(localStorage.getItem("DAILY").match(/.{1,4}/g).sort((a,b)=>b-a)[h+1]+" pts",size*50,350+h*35)
       }
       if (localStorage.getItem("RANDOM")==null||localStorage.getItem("RANDOM").match(/.{1,4}/g)[h+1]==undefined){
-        text("- - - - - - - - - -",size*50,350+h*35)
+        text("- - - - - - - - - -",size*50,600+h*35)
       }
       else{
         textStyle(NORMAL)
