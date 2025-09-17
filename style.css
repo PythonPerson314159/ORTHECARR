@@ -1,12 +1,14 @@
 html, body {
   height: 100%;
+}
+html{
   background-color: "#c4e8e8";
 }
 
 body {
   margin: 0;
   display: flex;
-
+text-align:center;
   /* This centers our sketch horizontally. */
   justify-content: center;
 
