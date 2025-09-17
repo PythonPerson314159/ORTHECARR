@@ -1,15 +1,26 @@
-
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial;
+  height: 100%;
+  background-color: "#c4e8e8";
 }
+
+body {
+  margin: 0;
+  display: flex;
+
+  /* This centers our sketch horizontally. */
+  justify-content: center;
+
+  /* This centers our sketch vertically. */
+  align-items: center;
+}
+
 div{
   text-align:center;
 }
 canvas {
   display: block;
 }
+
 @font-face {
     font-family: 'eee'; /*a name to be used later*/
     src: 'CONSOLA.TTF' /*URL to font*/
