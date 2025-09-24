@@ -926,3 +926,8 @@ v+=15
       ep.draw()
     }
     
+
+window.onresize = function() {
+  vad=Math.min(windowWidth / 600, windowHeight / 1000)-0.01
+  canvas=createCanvas(600*vad,1000*vad);
+}
