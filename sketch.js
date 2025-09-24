@@ -24,6 +24,7 @@ function setup() {
   
   textFont(fontt)
   
+  vad=Math.min(windowWidth / 600, windowHeight / 1000);
   
   size=5
     widd=size*100*2/3
@@ -190,9 +191,7 @@ oldsubbed=false
   k=new Date()*1
 	size=5
 yu=240000
-	
-  canvas=createCanvas(600,1000);
-	canvas.parent('canvas-container');
+  createCanvas(600*vad,1000*vad);
   textAlign(CENTER)
   
     textSize(40)
@@ -257,7 +256,7 @@ yu=240000
   }
 function draw(){
   
-  
+  scale(vad)
   
   translate(50,0)
   
@@ -575,6 +574,8 @@ if (opes[u].length==2){
   
     
   if (mn.slice(-4)=="ints" && emsd==0){
+      em.draw()
+    
 ebutton.draw()
   }
 }
@@ -728,7 +729,9 @@ pause+=1
     if (opes.length==0){
     append(opes,[curx*100,cury*100])
   }
-  
+   else if(opes[opes.length-1].join(",")==curx*100+","+100*cury){
+        opes=opes.slice(0,-1)
+      }
   else if(opes.map((item)=>item.join(",")).indexOf(curx*100+','+cury*100)==-1 && abs(opes.slice(-1)[0][0]-curx*100)+abs(opes.slice(-1)[0][1]-cury*100)==100){
     append(opes,[curx*100,cury*100])
   }
@@ -736,9 +739,6 @@ pause+=1
     else if(abs(opes.slice(-1)[0][0]-curx*100)+abs(opes.slice(-1)[0][1]-cury*100)==100 && opes[0].join("e")==curx*100+"e"+cury*100 && opes.map((item)=>item.join(",")).filter((item)=>item==curx*100+","+cury*100).length==1){
       append(opes,"Back to start")
     }
-  }
-  if (key=="-"){
-    opes=opes.slice(0,-1)
   }
   if (key=="Backspace" && (grid[cury][curx][1]=="k")){
     grid[cury][curx]=""
@@ -752,6 +752,9 @@ pause+=1
   if (key=="ArrowRight" && curx<size-1){
     curx+=1
   }
+    if (key=="-"){
+      opes=opes.slice(0,-1)
+    }
   score=round(see(1))
 }
   }
@@ -837,8 +840,8 @@ op=1
     
     if (mouseY<600){
     
-    tcurx=max(min(floor((mouseX-(600-500)/2)/(100)),4),0)
-    tcury=max(min(floor(((mouseY-((801-1)-800))-100)/(100)),4),0)
+    tcurx=max(min(floor((mouseX/drawingContext.getTransform().a-50)/(100)),4),0)
+    tcury=max(min(floor(((mouseY/drawingContext.getTransform().a-((801-1)-800))-100)/(100)),4),0)
     
       curx=tcurx
       cury=tcury
