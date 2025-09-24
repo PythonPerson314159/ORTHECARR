@@ -374,31 +374,6 @@ abutton.draw()
   }
 }
 
-function fdee(){
-  if (subbed==true&&oldsubbed==false){
-    randomSeed(hex1t(input.value().padEnd(8,'~')))
-  gen()
-  }
-  if (subbed==true){
-    fd()
-  }
-  
-  else{
-    if(input.value().split("").map((item)=>hex64.indexOf(item)).includes(-1)){
-      input.value(input.value().split("").filter((item)=>hex64.includes(item)).join(""))
-    }
-    
-    if (input.value().length>3){
-    input.value(input.value().slice(0,8))
-    }
-  background("#c4e8e8")
-  textSize(70)
-  text("Enter Seed...",size*50,300)
-  input.position(600/2-size*42.5, 350+((801-1)-(800))/2);
-  input.size(size*85,100)
-  }
-  oldsubbed=subbed
-}
 
 function fd(){
 translate(50-drawingContext.getTransform().e)  
@@ -838,10 +813,11 @@ op=1
   function mousePressed(){
   if (pause%2==0){
     
-    if (mouseY<600){
+    if (mouseY/drawingContext.getTransform().a<600){
     
-    tcurx=max(min(floor((mouseX/drawingContext.getTransform().a-50)/(100)),4),0)
-    tcury=max(min(floor(((mouseY/drawingContext.getTransform().a-((801-1)-800))-100)/(100)),4),0)
+    tcurx=max(min(floor((mouseX-50)/100/drawingContext.getTransform().a),4),0)
+    tcury=max(min(floor((mouseY-100)/100/drawingContext.getTransform().a),4),0)
+		
     
       curx=tcurx
       cury=tcury
