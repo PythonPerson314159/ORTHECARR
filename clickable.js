@@ -161,7 +161,7 @@ function Clickable(x,y) {
 		fill(this.color);
 		stroke(this.stroke);
 		strokeWeight(this.strokeWeight);
-		rect(this.x-drawingContext.getTransform().e, this.y-drawingContext.getTransform().f, this.width, this.height, this.cornerRadius);
+		rect(this.x-drawingContext.getTransform().e/drawingContext.getTransform().a, this.y-drawingContext.getTransform().f/drawingContext.getTransform().a, this.width, this.height, this.cornerRadius);
 		fill(this.textColor);
 		noStroke();
 		if(this.image){
@@ -170,9 +170,9 @@ function Clickable(x,y) {
 		textAlign(CENTER, CENTER);
 		textSize(this.textSize);
 		textFont(this.textFont);
-		text(this.text, this.x + this.width / 2-drawingContext.getTransform().e, this.y + this.height / 2-drawingContext.getTransform().f);
-		if (mouseX >= this.x && mouseY >= this.y
-			&& mouseX < this.x + this.width && mouseY < this.y + this.height) {
+		text(this.text, this.x + this.width / 2-drawingContext.getTransform().e/drawingContext.getTransform().a, this.y + this.height / 2-drawingContext.getTransform().f/drawingContext.getTransform().a);
+		if (mouseX/drawingContext.getTransform().a >= this.x && mouseY/drawingContext.getTransform().a >= this.y
+			&& mouseX/drawingContext.getTransform().a < this.x + this.width && mouseY/drawingContext.getTransform().a < this.y + this.height) {
 			cl_lastHovered = this;
 			if (mouseIsPressed && !cl_mouseWasPressed)
 				cl_lastClicked = this;
