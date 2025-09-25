@@ -548,7 +548,7 @@ if (opes[u].length==2){
   
   
     
-  if (mn.slice(-4)=="ints" && emsd==0){
+  if (mn.slice(-4)=="ints" && (emsd==0||esd==12)){
       em.draw()
     
 ebutton.draw()
