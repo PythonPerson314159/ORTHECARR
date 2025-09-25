@@ -699,6 +699,16 @@ pause+=1
   if (key=="ArrowUp" && cury>0){
     cury-=1
   }
+    
+if (key=="Enter" && opes.length>=2){
+     if(opes[opes.length-1]=="Back to start"&&opes[0].join(",")==curx*100+","+100*cury){
+      print("E")
+        opes=opes.slice(0,-1)
+       return
+      }
+   }    
+    
+    
   if (key=="Enter" && opes[opes.length-1]!="Back to start"){
   
     if (opes.length==0){
@@ -815,8 +825,8 @@ op=1
     
     if (mouseY/drawingContext.getTransform().a<600){
     
-    tcurx=max(min(floor((mouseX-50)/100/drawingContext.getTransform().a),4),0)
-    tcury=max(min(floor((mouseY-100)/100/drawingContext.getTransform().a),4),0)
+    tcurx=max(min(floor((mouseX-50*drawingContext.getTransform().a)/(100*drawingContext.getTransform().a)),4),0)
+    tcury=max(min(floor((mouseY-100*drawingContext.getTransform().a)/(100*drawingContext.getTransform().a)),4),0)
 		
     
       curx=tcurx
@@ -831,7 +841,13 @@ op=1
   
   function doubleClicked(){    
   if (pause%2==0){
-    
+    if (opes.length>=2){
+     if(opes[opes.length-1]=="Back to start"&&opes[0].join(",")==curx*100+","+100*cury){
+      print("E")
+        opes=opes.slice(0,-1)
+       return
+      }
+   }
     if (typeof curx!="undefined" && typeof cury!="undefined" && fghj!=12){
     
     if (opes[opes.length-1]!="Back to start"){
