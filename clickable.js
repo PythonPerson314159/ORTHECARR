@@ -157,19 +157,18 @@ function Clickable(x,y) {
 	}
 
 	this.draw = function () {
-      ox=mouseX
+		ox=mouseX
       oy=mouseY
       if (touches.length!=0){
         ox=touches[0].x
         oy=touches[0].y
       }
-      
-      
+		
 		push();
 		fill(this.color);
 		stroke(this.stroke);
 		strokeWeight(this.strokeWeight);
-		rect(this.x-50, this.y-drawingContext.getTransform().f, this.width, this.height, this.cornerRadius);
+		rect(this.x-drawingContext.getTransform().e/drawingContext.getTransform().a, this.y-drawingContext.getTransform().f/drawingContext.getTransform().a, this.width, this.height, this.cornerRadius);
 		fill(this.textColor);
 		noStroke();
 		if(this.image){
@@ -178,16 +177,16 @@ function Clickable(x,y) {
 		textAlign(CENTER, CENTER);
 		textSize(this.textSize);
 		textFont(this.textFont);
-		text(this.text, this.x + this.width / 2-drawingContext.getTransform().e, this.y + this.height / 2-drawingContext.getTransform().f);
-		if (ox >= this.x && oy >= this.y
-			&& ox < this.x + this.width && oy < this.y + this.height) {
+		text(this.text, this.x + this.width / 2-drawingContext.getTransform().e/drawingContext.getTransform().a, this.y + this.height / 2-drawingContext.getTransform().f/drawingContext.getTransform().a);
+		if (ox/drawingContext.getTransform().a >= this.x && oy/drawingContext.getTransform().a >= this.y
+			&& ox/drawingContext.getTransform().a < this.x + this.width && oy/drawingContext.getTransform().a < this.y + this.height) {
 			cl_lastHovered = this;
 			if (mouseIsPressed && !cl_mouseWasPressed)
 				cl_lastClicked = this;
 		}
 		pop();
 	}
-
 	cl_clickables.push(this);
 }
+
 
