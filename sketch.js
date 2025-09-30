@@ -120,7 +120,7 @@ pause+=1
   et.width=60
   et.height=60
   et.onPress = function(){
-location.href="https://orthecarr.netlify.app"
+location.href="https://orthecarr.netlify.app/rules.html"
   }
   et.text="?"
   
