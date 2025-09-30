@@ -157,8 +157,6 @@ function Clickable(x,y) {
 	}
 
 	this.draw = function () {
-		
-		
 		push();
 		fill(this.color);
 		stroke(this.stroke);
@@ -181,7 +179,6 @@ function Clickable(x,y) {
 		}
 		pop();
 	}
+
 	cl_clickables.push(this);
 }
-
-
