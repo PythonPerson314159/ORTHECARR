@@ -157,12 +157,7 @@ function Clickable(x,y) {
 	}
 
 	this.draw = function () {
-		ox=mouseX
-      oy=mouseY
-      if (touches.length!=0){
-        ox=touches[0].x
-        oy=touches[0].y
-      }
+		
 		
 		push();
 		fill(this.color);
@@ -178,8 +173,8 @@ function Clickable(x,y) {
 		textSize(this.textSize);
 		textFont(this.textFont);
 		text(this.text, this.x + this.width / 2-drawingContext.getTransform().e/drawingContext.getTransform().a, this.y + this.height / 2-drawingContext.getTransform().f/drawingContext.getTransform().a);
-		if (ox/drawingContext.getTransform().a >= this.x && oy/drawingContext.getTransform().a >= this.y
-			&& ox/drawingContext.getTransform().a < this.x + this.width && oy/drawingContext.getTransform().a < this.y + this.height) {
+		if (mouseX/drawingContext.getTransform().a >= this.x && mouseY/drawingContext.getTransform().a >= this.y
+			&& mouseX/drawingContext.getTransform().a < this.x + this.width && mouseY/drawingContext.getTransform().a < this.y + this.height) {
 			cl_lastHovered = this;
 			if (mouseIsPressed && !cl_mouseWasPressed)
 				cl_lastClicked = this;
