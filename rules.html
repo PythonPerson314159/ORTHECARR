@@ -1,0 +1,145 @@
+<head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+</head>
+
+<center>
+<div class="topnav">
+  <a class="active" href="#home">Play!</a>
+  <a href="rules.html">Rules</a>
+  <a href="#fv">Full Version</a>
+  <a href="#about">About</a>
+</div>
+<h2>RULES OF ORTHECARR</h2>
+<div class="div">
+<p>Orthecarr is an addictive grid-filling number game where the objective is to create a loop of numbers based on some simple rules. You're scored in four categories - the diversity of numbers in your chain, how long your chain is, how closely it returns to its starting position at the end, and how many perfilled numbers are included in the loop, as well as 99 free "coolness" points.</p>
+
+<p>In the game, you're presented with a partially-filled in grid of number from 0 to 9, with the choice of filling the empty squares in yourself. Clicking enter (or double-clicking on mobile) will add a square to the loop, which is indicated by it's square colour changing into anywhere from blue to yellow, based on how far along it is in the loop.</p>
+
+<p>A loop is only valid if, for any three consecutive tiles in the loop, given that a and b are the first and second squares, the third one is either:</p>
+
+
+<ul>
+<li>a plus b</li>
+<li>a plus half of b (if b is even)</li>
+<li>half of a plus b (if a is even)</li>
+<li>a plus b divided by 2 (if the sum is even)</li>
+<li>a times b</li>
+<li>a times b divided by 2 (if the product is even)</li></ul>
+
+<p>For all of these answers, you take the last digit. For example, if the first two numbers are 4 and 7, then 8 would be valid since 4x7 is 28, and the last digit is 8.</p>
+
+</div>
+
+<h2>DEEPER RULES</h2>
+
+<div class="div">
+<p>If you're particularly skilled at the game, you might be able to consistently be able to loop back to the start - not next to the start, but right TO the start. The rules around this are as follows:</p>
+
+<p>The second last number in the loop, the last number in the loop and the number that you looped back to must form a valid triplet, but the second last number, the one the you looped back to and the SECOND number do NOT have to form a valid triplet (although it would be very cool if you did).</p>
+
+<p>For example, if your chain is 4, 6, ... , 9, 5, and BACK to 4, you would have a valid game, since 9 and 5 can lead to 4, but it doesn't matter that 5 and 4 don't lead to 6.</p>
+
+
+<p>Each game you have one wildcard. You can put it in place for any number (it doesn't have to be valid), but it automatically deducts 1000 points from your score so you must be careful with it.</p>
+
+<p>For example, if the chain is currently 2, 3, 6, you could add the wildcard - 2, 3, 6, ? - and place anything next, say throw a 7 in - 2, 3, 6, ?, 7 - and even use the wildcard as another number to claim a prefilled - 2, 3, 6, ?, 7, 1 (prefilled) </p>
+</div>
+
+<h2>SCORING</h2>
+
+<div class="div">
+<p>You get 300 points for every number that appears TWICE in your loop (0, 1, 2, 3... 8, 9 would give 0  points, but 0, 0, 1, 1,... 9, 9 would give 3000)</p>
+
+<p>You also gain 100 points for every number that's in it (a loop of length 6 would yield 600 points). Additionally, if you have a closed loop, the first one is counted twice, (eg, a closed loop 2x2 square would give 500 length points).</p>
+
+<p>Loopiness is a seemingly complex formula, but is really just based on how close you return to the start once the loop is finished - if you get right back to the start, 1400, but if you're far away, 0!</p>
+
+<p>Lastly, you gain 300 points for every prefilled number that appears in your loop - simple.</p>
+
+<p>As for deductions, you lose 500 points for every minute you go over the time limit of four minutes, capped at 1500 points. And of course, for every game you always get 99 free coolness points for being awesome, to lead to the perfect score being an elusive 9999.</p>
+<hr>
+<p>So now that you know the rules...</p>
+</div>
+
+<br>
+<button onclick="location.href='index.html'">PLAY ORTHECARR NOW!</button>
+<br>
+<br>
+
+<p>*If this tutorial is unclear, email me at i.am.a.very.cool.person.29@gmail.com for suggestions - I'll improve this!</p>
+<br>
+
+</center>
+
+
+
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  padding: 11px;
+  border-radius:20px;
+}
+
+.topnav a {
+transition:0.3s;
+
+  padding: 12px;
+
+  color: #f2f2f2;
+  text-align: center;
+  margin: 0;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+transition:0.3s;
+
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+transition:0.3s;
+
+  padding: 15px;
+
+  background-color: #6789ab;
+  color: white;
+}
+
+.topnav a.active:hover {
+transition:0.3s;
+  padding: 15px;
+color:#fff;
+  background-color: #007fff;
+}
+html{
+font-family:"Arial";
+max-width:99vw;
+}
+
+.div{
+width:60%;
+text-align:left;
+}
+
+button{
+width:300px;
+height:100px;
+font-size:24px;
+border-radius:10px;
+transition:0.3s;
+
+}
+
+button:hover{
+background:#dddddd;
+box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+transition:0.3s;
+}
+</style>
