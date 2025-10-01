@@ -904,7 +904,7 @@ v+=15
     
 
 window.onresize = function() {
-  vad=Math.min(windowWidth / 600, windowHeight / 1000)-0.01
+  vad=Math.min(windowWidth / 600, windowHeight / 1000)-0.067/*oH mY gOsH iS tHaT a SiX sEvEn ReFeReNcE*/
   canvas=createCanvas(600*vad,1000*vad);
 }
 
