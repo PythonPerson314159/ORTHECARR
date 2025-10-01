@@ -1,7 +1,7 @@
 
 let seedth1ng
 function preload() {
-  seedth1ng = loadFont('CONSOLA.TTF');
+  seedth1ng = loadFont('CONSOLA.TTF'); 
 }
 
 bnm=0
@@ -13,8 +13,8 @@ function setup() {
   
   textFont(fontt)
   
-  vad=Math.min(windowWidth / 600, windowHeight / 1000);
-  
+  vad=Math.min(windowWidth / 600, windowHeight / 1000)-0.067/*oH mY gOsH iS tHaT a SiX sEvEn ReFeReNcE*/
+	
   size=5
     widd=size*100*2/3
   
@@ -90,7 +90,8 @@ tohigh()
   em.width=60
   em.height=60
   em.onPress = function(){
-mode="MENU"  }
+setup()
+  }
   em.text="🔙"
   
    ep = new Clickable();     //Create button
@@ -112,6 +113,15 @@ pause+=1
 location.href="https://orthecarr.netlify.app/rules.html"
   }
   et.text="?"
+
+	  et2 = new Clickable();     //Create button
+  et2.locate(20,20);        //Position Button
+  et2.width=60
+  et2.height=60
+  et2.onPress = function(){
+location.href="https://orthecarr.netlify.app/donate.html"
+  }
+  et2.text="?"
   
   
   for(x=0;x<10;x++){
@@ -293,6 +303,7 @@ text("PAUSED\nGAME",250,400)
     social.draw()
     }
     et.draw()
+    et2.draw()
   }
   else if (mode=="DAILY"){
     
