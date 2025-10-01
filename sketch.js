@@ -1,18 +1,7 @@
-hex64="!0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
 
 let seedth1ng
 function preload() {
   seedth1ng = loadFont('CONSOLA.TTF');
-}
-
-function hex1t(t){
-  ere=t.split("").slice(0,8).map((item)=>hex64.indexOf(item)) 
-  ere.reverse()
-  runtot=0
-  for (h in ere){
-    runtot+=ere[h]*64**h
-  }
-  return runtot/64**3
 }
 
 bnm=0
@@ -768,12 +757,7 @@ function torand(){
       
   xtras=0
   opes=[]
-  
-  s=''
-  for (g=0;g<8;g++){
-    s+=random(hex64.split(""))
-  }
-  randomSeed(hex1t(s))
+  randomSeed(random())
   gen()
   mode="RANDOM"
 }
