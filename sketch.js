@@ -121,7 +121,7 @@ location.href="https://orthecarr.netlify.app/rules.html"
   et2.onPress = function(){
 location.href="https://orthecarr.netlify.app/donate.html"
   }
-  et2.text="?"
+  et2.text="❤️"
   
   
   for(x=0;x<10;x++){
