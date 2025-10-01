@@ -14,7 +14,7 @@ function getLogicalMouse() {
   // So to reverse: divide mouseX/mouseY by vad, then subtract translation
   // If vad is undefined (e.g. before setup), fallback to 1
   let s = typeof vad !== "undefined" ? vad : 1;
-  let x = (mouseX  - 50)/s;
+  let x = (mouseX/s  - drawingContext.getTransform().e);
   let y = mouseY / s - 0;
   return { x, y };
 }
