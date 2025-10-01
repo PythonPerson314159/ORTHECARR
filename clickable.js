@@ -7,6 +7,19 @@ var cl_lastClicked = null;
 //All created buttons
 var cl_clickables = [];
 
+// --- Begin Fix: Consistent Mouse Coordinate Handling with Scaling/Translation ---
+function getLogicalMouse() {
+  // These values should match the order and values of scale/translate in draw()
+  // In your draw(), you do: scale(vad); translate(50, 0);
+  // So to reverse: divide mouseX/mouseY by vad, then subtract translation
+  // If vad is undefined (e.g. before setup), fallback to 1
+  let s = typeof vad !== "undefined" ? vad : 1;
+  let x = mouseX / s - 50;
+  let y = mouseY / s - 0;
+  return { x, y };
+}
+// --- End Fix ---
+
 //This function is what makes the magic happen and should be ran after
 //each draw cycle.
 p5.prototype.runGUI = function () {
@@ -171,12 +184,16 @@ function Clickable(x,y) {
 		textSize(this.textSize);
 		textFont(this.textFont);
 		text(this.text, this.x + this.width / 2-drawingContext.getTransform().e/drawingContext.getTransform().a, this.y + this.height / 2-drawingContext.getTransform().f/drawingContext.getTransform().a);
-		if (mouseX/drawingContext.getTransform().a >= this.x && mouseY/drawingContext.getTransform().a >= this.y
-			&& mouseX/drawingContext.getTransform().a < this.x + this.width && mouseY/drawingContext.getTransform().a < this.y + this.height) {
+
+		// --- Begin Fix: Use logical mouse coordinates for hit-detection ---
+		let logicalMouse = getLogicalMouse();
+		if (logicalMouse.x >= this.x && logicalMouse.y >= this.y
+			&& logicalMouse.x < this.x + this.width && logicalMouse.y < this.y + this.height) {
 			cl_lastHovered = this;
 			if (mouseIsPressed && !cl_mouseWasPressed)
 				cl_lastClicked = this;
 		}
+		// --- End Fix ---
 		pop();
 	}
 
