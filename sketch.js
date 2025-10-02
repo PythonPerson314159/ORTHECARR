@@ -925,7 +925,7 @@ function gm(){
 //AI ASSISTED
 
  let s = typeof vad !== "undefined" ? vad : 1;
-  let x = (mouseX  - 50)/s;
+  let x = (mouseX  )/s;
   let y = mouseY / s ;
   return { x, y };
 }
