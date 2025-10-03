@@ -538,7 +538,7 @@ if (opes[u].length==2){
   else if(fghj!=12){
   strokeWeight(4)
   circle(50+curx*100,50+cury*100,70)
-  if (typeof bee!='undefined'&&new Date()-bm<2000&&mn!="+1 minute!"&&mn!="Start the grid!") {
+  if (typeof bee!='undefined'&&new Date()-bm<2000&&mn!="+1 minute!"&&mn!="Start the loop!") {
     stroke(255,0,0)
    circle(50+bee[0]*100,50+bee[1]*100,70) 
   }
@@ -590,7 +590,7 @@ function finss(){
   }
   else{
     if (see()==0){
-      mn="Start the grid!"
+      mn="Start the loop!"
     }
     else{
     mn=(see()-curs.includes("?")*1000)+" points"
@@ -623,7 +623,7 @@ function see(fin){
      count[s] ? count[s]++ : count[s] = 1;
   });
     if (opes.length==0){
-      return "Start it!"
+      return "Start the loop!"
     }
   count=Object.keys(count).map((key) => [key, count[key]]).filter((item)=>item[0]!='undefined')
 a=count.filter((item)=>item[1]>=2).length*300
@@ -647,7 +647,7 @@ oopes.forEach((item)=>fins.push(grid[item[1]/100][item[0]/100]))
         return "Too short!"
       }
       else if (curs.indexOf(undefined)!=-1){
-      return "Not finished!"
+      return "Tiles are empty!"
     }
     else{
       e=0
@@ -919,3 +919,49 @@ window.onresize = function() {
   canvas=createCanvas(600*vad,1000*vad);
 }
 
+last=0
+lastcoords="99"
+function touchStarted(){
+
+          if (pause%2==0){
+    
+    if ((mouseY-100*vad)/vad<600){
+      
+        
+    tcurx=max(min(Math.floor((touches[0].x-50*vad)/(vad*100)),4),0)
+    tcury=max(min(Math.floor((touches[0].y-100*vad)/(vad*100)),4),0)
+    if (millis()-last<=400&&lastcoords==tcurx+String(tcury)){
+if (opes.length>=2){
+     if(opes[opes.length-1]=="Back to start"&&opes[0].join(",")==curx*100+","+100*cury){
+      print("E")
+        opes=opes.slice(0,-1)
+       return
+      }
+   }    
+    
+    
+  if (opes[opes.length-1]!="Back to start"){
+  
+    if (opes.length==0){
+    append(opes,[curx*100,cury*100])
+  }
+   else if(opes[opes.length-1].join(",")==curx*100+","+100*cury){
+        opes=opes.slice(0,-1)
+      }
+  else if(opes.map((item)=>item.join(",")).indexOf(curx*100+','+cury*100)==-1 && abs(opes.slice(-1)[0][0]-curx*100)+abs(opes.slice(-1)[0][1]-cury*100)==100){
+    append(opes,[curx*100,cury*100])
+  }
+    
+    else if(abs(opes.slice(-1)[0][0]-curx*100)+abs(opes.slice(-1)[0][1]-cury*100)==100 && opes[0].join("e")==curx*100+"e"+cury*100 && opes.map((item)=>item.join(",")).filter((item)=>item==curx*100+","+cury*100).length==1){
+      append(opes,"Back to start")
+    }
+  }
+    }
+        else{
+          last=millis()
+      curx=tcurx
+      cury=tcury
+        lastcoords=curx+String(cury)
+            
+  }}}
+}
