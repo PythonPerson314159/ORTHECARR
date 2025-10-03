@@ -818,7 +818,7 @@ op=1
   function mousePressed(){
   if (pause%2==0){
     
-    if (v.y/drawingContext.getTransform().a<600){
+    if ((mouseY-100*vad)/vad<600){
     
     tcurx=max(min(Math.floor((mouseX-50*vad)/(vad*100)),4),0)
     tcury=max(min(Math.floor((mouseY-100*vad)/(vad*100)),4),0)
