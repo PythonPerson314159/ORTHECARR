@@ -817,11 +817,11 @@ op=1
 }
   function mousePressed(){
   if (pause%2==0){
-    v=gm()
+    
     if (v.y/drawingContext.getTransform().a<600){
     
-    tcurx=max(min(floor((v.x-50*drawingContext.getTransform().a)/(100*drawingContext.getTransform().a)),4),0)
-    tcury=max(min(floor((v.y-100*drawingContext.getTransform().a)/(100*drawingContext.getTransform().a)),4),0)
+    tcurx=max(min(Math.floor((mouseX-50*vad)/(vad*100)),4),0)
+    tcury=max(min(Math.floor((mouseY-100*vad)/(vad*100)),4),0)
 		
     
       curx=tcurx
@@ -919,13 +919,3 @@ window.onresize = function() {
   canvas=createCanvas(600*vad,1000*vad);
 }
 
-
-function gm(){
-
-//AI ASSISTED
-
- let s = typeof vad !== "undefined" ? vad : 1;
-  let x = (mouseX  )/s;
-  let y = mouseY / s ;
-  return { x, y };
-}
