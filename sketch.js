@@ -513,7 +513,7 @@ if (opes[u].length==2){
   
   fill(0)
   if (typeof esd!='undefined'){
-   mn=String(see())+" points" 
+   mn=String(max(see()-curs.includes("?")*1000,0))+" points" 
   }
   
     textSize(15)
