@@ -956,6 +956,7 @@ if (opes.length>=2){
       append(opes,"Back to start")
     }
   }
+		return false;
     }
         else{
           last=millis()
