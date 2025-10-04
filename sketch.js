@@ -768,7 +768,7 @@ function torand(){
       
   xtras=0
   opes=[]
-  randomSeed(random())
+  randomSeed(random()*19991231)
   gen()
   mode="RANDOM"
 }
@@ -964,4 +964,8 @@ if (opes.length>=2){
         lastcoords=curx+String(cury)
             
   }}}
+	else{
+    l0l=new Date()
+      pause+=1
+    }
 }
