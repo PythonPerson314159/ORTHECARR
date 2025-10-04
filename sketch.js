@@ -116,12 +116,12 @@ location.href="https://orthecarr.netlify.app/rules.html"
 
 	  et2 = new Clickable();     //Create button
   et2.locate(20,20);        //Position Button
-  et2.width=60
+  et2.width=260
   et2.height=60
   et2.onPress = function(){
-location.href="https://orthecarr.netlify.app/donate.html"
+location.href="https://pythonperson.itch.io/orthecarr"
   }
-  et2.text="❤️"
+  et2.text="Full Game!"
   
   
   for(x=0;x<10;x++){
