@@ -2,16 +2,16 @@
 let seedth1ng
 function preload() {
   seedth1ng = loadFont('CONSOLA.TTF'); 
+	  qd = loadFont('Satoshi-Variable.ttf'); 
+
 }
 
 bnm=0
 
 function setup() {
+	  textFont(qd)
   l0l=0
-  fontt="Verdana"
-  
-  
-  textFont(fontt)
+
   
   vad=Math.min(windowWidth / 600, windowHeight / 1000)-0.067/*oH mY gOsH iS tHaT a SiX sEvEn ReFeReNcE*/
 	
@@ -254,7 +254,8 @@ yu=240000
   
   }
 function draw(){
-  
+    textFont(qd)
+
   scale(vad)
   
   translate(50,0)
@@ -393,7 +394,7 @@ translate(50-drawingContext.getTransform().e)
 textSize(30)
   textFont(seedth1ng)
   text(sd,size*50,size*100+60)
-  textFont(fontt)
+  textFont(qd)
 
   textSize(40)
   fill(0,0,0,0)
