@@ -189,7 +189,7 @@ oldsubbed=false
     
   k=new Date()*1
 	size=5
-yu=240000
+yu=300000
   createCanvas(600*vad,1000*vad);
   textAlign(CENTER)
   
@@ -900,7 +900,7 @@ v+=15
     }
     textSize(42.31)
     text("Final score is "+max(mn.split(" ")[0],0)+" points",size*50,450+150)
-    text("in "+floor(((240000-yeu)+1000)/60000)+":"+String(floor((((240000-yeu)+1000)%60000)/1000)).padStart(2,"0"),size*50,515+150)
+    text("in "+floor(((300000-yeu)+1000)/60000)+":"+String(floor((((300000-yeu)+1000)%60000)/1000)).padStart(2,"0"),size*50,515+150)
 }
     
     
