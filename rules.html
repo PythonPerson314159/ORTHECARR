@@ -15,21 +15,64 @@
 <div class="div">
 <p>Orthecarr is an addictive grid-filling number game where the objective is to create a loop of numbers based on some simple rules. You're scored in four categories - the diversity of numbers in your chain, how long your chain is, how closely it returns to its starting position at the end, and how many perfilled numbers are included in the loop, as well as 99 free "coolness" points.</p>
 
-<p>In the game, you're presented with a partially-filled in grid of number from 0 to 9, with the choice of filling the empty squares in yourself. Clicking enter (or double-clicking on mobile) will add a square to the loop, which is indicated by it's square colour changing into anywhere from blue to yellow, based on how far along it is in the loop.</p>
+<p>In the game, you're presented with a partially-filled in grid of number from 0 to 9, with the choice of filling the empty squares in yourself. Clicking enter (or double-clicking on mobile) will add a square to the loop.</p>
 
-<p>A loop is only valid if, for any three consecutive tiles in the loop, given that a and b are the first and second squares, the third one is either:</p>
+<p>A loop is only valid if, for any three consecutive tiles in the loop, given that a and b are the first and second squares, the third one is one of:</p>
+</div>
 
+<div id="ed">
+<table>
+  <tr>
+    <th>Operation</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>a plus b</td>
+    <td>3 and 5, 3 plus 5 = 8</td>
+  </tr>
+  <tr>
+    <td>a plus half of b</td>
+    <td>6 and 4, 6 plus half of 4 = 8</td>
+  </tr>
+  <tr>
+    <td>half of a plus b</td>
+    <td>8 and 3, half of 8 plus 3 = 7</td>
+  </tr>
+  <tr>
+    <td>a plus b divided by 2</td>
+    <td>1 and 5, 1 plus 5 over 2 = 3</td>
+  </tr>
+  <tr>
+    <td>a times b</td>
+    <td>2 and 3, 2 times 3 = 6</td>
+  </tr>
+  <tr>
+    <td>a times b divided by 2</td>
+    <td>6 and 3, 6 times 3 over 2 = 9</td>
+  </tr>
+</table>
+</div>
 
-<ul>
-<li>a plus b</li>
-<li>a plus half of b (if b is even)</li>
-<li>half of a plus b (if a is even)</li>
-<li>a plus b divided by 2 (if the sum is even)</li>
-<li>a times b</li>
-<li>a times b divided by 2 (if the product is even)</li></ul>
+<div class="div">
 
-<p>For all of these answers, you take the last digit. For example, if the first two numbers are 4 and 7, then 8 would be valid since 4x7 is 28, and the last digit is 8.</p>
+<p>For all of these answers, you take the last digit. For example, if the first two numbers are 4 and 7, then 8 would be valid since 4 x 7 is 28, and the last digit is 8. Additionally, you can only do operations if they return a whole number (you can't do a plus half of b for 3 and 7, for example, since that isn't a whole number).</p>
 
+</div>
+<h2>SCORING</h2>
+
+<div class="div">
+<p>You get 300 points for every number that appears TWICE in your loop (0, 1, 2, 3... 8, 9 would give 0  points, but 0, 0, 1, 1,... 9, 9 would give 3000)</p>
+
+<p>You also gain 100 points for every number that's in it (a loop of length 6 would yield 600 points). Additionally, if you have a closed loop, the first one is counted twice, (eg, a closed loop 2x2 square would give 500 length points).</p>
+
+<p>Loopiness is a seemingly complex formula, but is really just based on how close you return to the start once the loop is finished - if you get right back to the start, 1400, but if you're far away, 0!</p>
+
+<p>Lastly, you gain 300 points for every prefilled number (appear as black in the game) that's in your loop - simple.</p>
+
+<p>As for deductions, you lose 500 points for every minute you go over the time limit of four minutes, capped at 1500 points, plus 1000 points if you use your wildcard (explained in the "Deeper Rules" section). And of course, for every game you always get 99 free coolness points for being awesome, to lead to the perfect score being an elusive 9999.</p>
+
+<h3>TL;DR</h3>
+<p>To get a high Orthecarr score, you need  a diverse array of numbers, a loop that goes as close as possible to the start, a bunch of prefilled numbers in your loop, and, of course, a nice, long, loop.</p>
 </div>
 
 <h2>DEEPER RULES</h2>
@@ -47,28 +90,15 @@
 <p>For example, if the chain is currently 2, 3, 6, you could add the wildcard - 2, 3, 6, ? - and place anything next, say throw a 7 in - 2, 3, 6, ?, 7 - and even use the wildcard as another number to claim a prefilled - 2, 3, 6, ?, 7, 1 (prefilled) </p>
 </div>
 
-<h2>SCORING</h2>
-
-<div class="div">
-<p>You get 300 points for every number that appears TWICE in your loop (0, 1, 2, 3... 8, 9 would give 0  points, but 0, 0, 1, 1,... 9, 9 would give 3000)</p>
-
-<p>You also gain 100 points for every number that's in it (a loop of length 6 would yield 600 points). Additionally, if you have a closed loop, the first one is counted twice, (eg, a closed loop 2x2 square would give 500 length points).</p>
-
-<p>Loopiness is a seemingly complex formula, but is really just based on how close you return to the start once the loop is finished - if you get right back to the start, 1400, but if you're far away, 0!</p>
-
-<p>Lastly, you gain 300 points for every prefilled number that appears in your loop - simple.</p>
-
-<p>As for deductions, you lose 500 points for every minute you go over the time limit of four minutes, capped at 1500 points. And of course, for every game you always get 99 free coolness points for being awesome, to lead to the perfect score being an elusive 9999.</p>
 <hr>
 <p>So now that you know the rules...</p>
-</div>
 
 <br>
 <button onclick="location.href='index.html'">PLAY ORTHECARR NOW!</button>
 <br>
 <br>
-
-<p>*If this tutorial is unclear, email me at orthecarr@gmail.com for suggestions - I'll improve this!</p>
+<h3>And if you'd like...</h3>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSck_AkHxRecTGjzX_AXHoFFh3EGNQz45hQ9GGXEZHq6uCOEjQ/viewform?embedded=true" width="640" height="659" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 <br>
 
 </center>
@@ -133,12 +163,18 @@ height:100px;
 font-size:24px;
 border-radius:10px;
 transition:0.3s;
-
 }
 
 button:hover{
 background:#dddddd;
 box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
 transition:0.3s;
+}
+table, th, td {
+  border:1px solid black;text-align:center;
+  padding:5px;
+}
+h3{
+text-align:center;
 }
 </style>
